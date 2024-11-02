@@ -8,5 +8,3 @@
 | Lawrence Prophete | E |217579996 | llp17@my.yorku.ca | 6474676357 | lawrenceprophete 
 |  |  |  |  |  |
 
-
-**Trell0_invite:** [Click Here](https://trello.com/invite/6725816a906bae03f7da26db/ATTI065b871dfd1ef32f90f4b72f30d41fd2E1EF71F4)
