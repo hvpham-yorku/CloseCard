@@ -59,7 +59,7 @@
       - Players can enter custom text for answer cards.
       - Custom cards are stored in the player's deck for future rounds.
 
-12. **As a player, I want to select game themes (e.g., casual, gay) so that I can adjust the game’s tone.**
+12. **As a player, I want to select game themes so that I can adjust the game’s tone.**
     - **Acceptance Criteria**:
       - Themes are selectable at the start of the game.
       - Themes influence the choice of prompt and answer cards.
@@ -98,9 +98,9 @@
       - All features are usable on any resolution without issue.
 
 19. **As a player, I want the option to switch between light and dark modes so that I can play in different lighting conditions comfortably.**
-   - **Acceptance Criteria**:
-     - A toggle for switching between light and dark mode is available in the settings.
-     - The UI updates seamlessly based on the selected mode, with appropriate colors for readability in each mode.
+    - **Acceptance Criteria**:
+      - A toggle for switching between light and dark mode is available in the settings.
+      - The UI updates seamlessly based on the selected mode, with appropriate colors for readability in each mode.
 
 ## Game Moderation
 20. **As a host, I want the option to kick players from the game so that I can moderate as needed.**
