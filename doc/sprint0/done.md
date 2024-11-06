@@ -1,36 +1,43 @@
-Completion Criteria 
+# Completion Criteria
 
-    User Interface 
-        Game Page: 
-            This game page will be the page where users play the game and this page will display the CloseCard prompt.
-                Requirements:   
-                1. Users are able to see their card prompt on their screens
-                2. Users are able to enter a prompt that is subsequently displayed on the screen. 
-                3. Users are able to exit/quit the game.
-                4. Users will be able to see who is the person who got the most votes for each round. 
+## User Interface
 
-        Account Information Page: 
-            This page will display users personal account information. 
-              Requirements: 
-              1.Users are able to see their account page with their personal information
-              2.Users are able to enter account information and subsequently see the information displayed on the screen.
+### Game Page
+This is the main page where users play the game. It displays the CloseCard prompt.
 
-        Landing Page: 
-            This is the page that will have information on the CloseCard Game and a prompt to go and start a game.
-            Requirements: 
-            1. Users should be able to see a link/prompt to join a game 
-            2. Users should be able to see a link/prompt to create a game
-        Game Creation / Game Joining Page 
-            This page will have the information on creating a game and joining a game
-            Requirements: 
-            1. Users should be able to make a new game and room names
-            2. Users should be able to enter the a code to join a game room
-    
-    Database 
-        1. Users information such as email, username, name and birthdate are stored.
-        2. Store information on game room participants and, game room creator.
-    Game Logic 
-        1. Users will be given a different prompt each round of the game. 
-        2. Users will be able to vote on which response was the best and a winner chosen each round.
-        
+- **Requirements:**
+  1. Users can see their card prompt on the screen.
+  2. Users can enter a prompt, which is then displayed on the screen.
+  3. Users can exit or quit the game.
+  4. Users can see who received the most votes for each round.
 
+### Account Information Page
+This page displays users' personal account information.
+
+- **Requirements:**
+  1. Users can view their account page with personal information.
+  2. Users can enter account information, which is subsequently displayed on the screen.
+
+### Landing Page
+This is the introductory page with information about CloseCard and a prompt to start a game.
+
+- **Requirements:**
+  1. Users should see a link or prompt to join a game.
+  2. Users should see a link or prompt to create a game.
+
+### Game Creation / Game Joining Page
+This page contains options for creating and joining a game.
+
+- **Requirements:**
+  1. Users should be able to create a new game and assign room names.
+  2. Users should be able to enter a code to join a game room.
+
+## Database
+
+1. Store user information, including email, username, name, and birthdate.
+2. Store details of game room participants and the game room creator.
+
+## Game Logic
+
+1. Each round, users receive a different prompt.
+2. Users can vote on the best response, and a winner is chosen each round.
