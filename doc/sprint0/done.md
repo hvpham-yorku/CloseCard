@@ -1,4 +1,5 @@
 Completion Criteria 
+
     User Interface 
         Game Page: 
             This game page will be the page where users play the game and this page will display the CloseCard prompt.
