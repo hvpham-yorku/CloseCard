@@ -1,1 +1,4 @@
-
+- Our team was organized by using discord to communicate with all the members. We used the chats to discuss about who was going to contribute to which documents, and to schedule calls to clarify disputes or disagreements.
+- Decisions were usually made through voting. If there were multiple ideas present, we would either vote on the idea we preferred, or the idea that was best suited for the project would naturally be decided through discussing the benefits and drawbacks.
+- User stories were decided by group members thinking about what they would want to have on this app if they were using it themselves. For example, having a chat to talk to the other group members, and having an option for the game room creator to kick other players.
+- We met once a week with the whole group to decide on important parts of the project and discuss about any differing ideas so that everyone was on the same page. Smaller meetings between 2-3 group members at a time occurred during the week as well to settle smaller issues.
