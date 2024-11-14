@@ -14,7 +14,7 @@ your `NEXT_PUBLIC_API_KEY` and `NEXT_PUBLIC_API_SECRET` environment variables.
 
 Get these keys from [Rayhaan](https://github.com/itzray116R) and then add them into your .env file to run
 
-First, run the development server:
+run the development server:
 
 ```bash
 npm run dev
