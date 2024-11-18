@@ -2,7 +2,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import Footer from "@/components/Global/Footer";
 import {Header} from "@/components/Global/Header";
 import {SignIn} from "@/components/LandingPage/SignIn";
-import { SignedIn } from "@clerk/nextjs";
+import SignedIn from "@/components/LandingPage/SignedIn";
 
 export default async function Home() {
   const user = await currentUser ();
@@ -13,7 +13,7 @@ export default async function Home() {
       <main className="flex justify-center px-4 p-4">
         {user ? (
           <h1>
-            <SignedIn lastName={user.lastName} firstName={user.firstName} />
+            <SignedIn />
           </h1>
         ) : (
           <SignIn />
