@@ -30,6 +30,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Shadcn](https://ui.shadcn.com/docs/components/accordion) for Components
 - [Clerk](https://clerk.com/docs) for Authentication
+- [lucide](https://lucide.dev/guide/packages/lucide-react) for icons in footer
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
