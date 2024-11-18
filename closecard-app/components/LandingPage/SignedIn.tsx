@@ -3,6 +3,7 @@ import { Button } from '../ui/button';
 import { currentUser} from '@clerk/nextjs/server';
 
 const SignedIn = async () => {
+  
   const user = await currentUser();
 
   return (
