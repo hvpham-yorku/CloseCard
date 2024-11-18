@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import { currentUser } from '@clerk/nextjs/server'
-import { ClerkLoaded, SignedIn, SignInButton, UserButton } from '@clerk/nextjs';
+import { ClerkLoaded, SignInButton, UserButton } from '@clerk/nextjs';
 
 //make the below async
 export const Header = async () => {
