@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow px-10 p-4">
+      <main className="flex justify-center px-4 p-4">
         {user ? (
           <h1>
             Welcome <span>{user.firstName} {user.lastName}</span>
