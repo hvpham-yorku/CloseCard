@@ -2,13 +2,14 @@
 "use client";
 
 import React from "react";
-import { Github, Mail } from "lucide-react"; // Import GitHub and Mail icons
+import { EnvelopeOpenIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
+
 
 export default function Footer() {
   return (
-    <footer className="bg-black bg-opacity-70 text-white p-4 w-full">
+    <footer className="bg-transparent text-white p-4 w-full fixed bottom-0">
       <div className="container px-9 mx-auto flex justify-between items-center">
-        <div className="text-xs">
+        <div className="text-md">
           <span>@closecard</span>
         </div>
         <div className="flex space-x-8 text-xs">
@@ -17,14 +18,14 @@ export default function Footer() {
             target="_blank" rel="noopener noreferrer"
             className="flex items-center space-x-2 hover:underline"
           >
-            <Github className="h-6 w-6" />
+            <GitHubLogoIcon className="h-6 w-6" />
             <span>GitHub</span>
           </a>
           <a
             href="mailto:ray116@my.yorku.ca"
             className="flex items-center space-x-2 hover:underline"
           >
-            <Mail className="h-6 w-6" />
+            <EnvelopeOpenIcon className="h-6 w-6" />
             <span>Email</span>
           </a>
         </div>
