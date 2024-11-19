@@ -8,7 +8,7 @@ export default async function Home() {
   const user = await currentUser ();
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-800">
       <Header />
       <main className="flex justify-center px-4 p-4">
         {user ? (
