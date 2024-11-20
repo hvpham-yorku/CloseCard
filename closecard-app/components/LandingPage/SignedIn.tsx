@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../ui/button';
 import { currentUser} from '@clerk/nextjs/server';
+import Link from 'next/link';
 
 const SignedIn = async () => {
   
@@ -15,8 +16,12 @@ const SignedIn = async () => {
           <p className="text-xl text-black">To begin playing, choose one of the options below</p>
         </div>
         <div className="flex space-x-4 mb-4 h-1/4">
-          <Button className='rounded-full bg-green-800 px-10 py-7 text-lg text-white'>Create a Game</Button>
-          <Button className='rounded-full bg-teal-700 px-10 py-7 text-lg text-white'>Join a Game</Button>
+          <Button className='rounded-full bg-green-800 px-10 py-7 text-lg text-white'>
+            <Link href="/Game">Create a Game </Link>
+          </Button>
+          <Button className='rounded-full bg-teal-700 px-10 py-7 text-lg text-white'>
+            <Link href="/JoinGame">Join a Game </Link>
+          </Button>
         </div>
       </div>
     </div>
