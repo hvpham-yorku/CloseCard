@@ -1,45 +1,48 @@
-'use client'
+'use client';
 
 import React from 'react';
-import { AvatarIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
-interface GamePageProps {
-  firstName: string | null;
-  lastName: string | null;
-}
-
-export default function GamePage({ firstName, lastName }: GamePageProps) {
-  const handleButtonClick = () => {
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
-    alert(`Generated Number: ${randomNumber}`);
-  };
-
+export default function GamePage() {
   return (
-    <div className="w-full h-screen bg-gray-900 text-gray-100 overflow-hidden flex flex-col">
-      <div className="flex-1 flex overflow-hidden">
-        {/* Game area */}
-        <main className="flex-1 overflow-auto p-4">
-          <div className="max-w-2xl mx-auto">
-            <Card className="w-full">
-              <CardHeader>
-                <CardTitle>Prompt</CardTitle>
-                <CardDescription>Answer the question below</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <h2 className="text-2xl font-bold text-center mb-4">Favourite Way To Spend The Weekend</h2>
-                <div className="space-y-4">
-                  <Input placeholder="Type your favourite weekend activity here..." />
-                  <Button className="w-full">Submit Answer</Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </main>
-      </div>
+    <div className="flex flex-col w-3/4 h-[calc(100vh-110px)] absolute left-1">
+      {/* Main game area */}
+      <main className="flex-grow">
+        <div className="w-full h-full pr-4 pl-2">
+          <Card className="h-full flex flex-col">
+            <CardHeader>
+              <CardTitle className='text-2xl'>Prompt</CardTitle>
+              <CardDescription className='justify-center'>Play Your Turn Answer</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow flex flex-col justify-between">
+              <div>
+                <h2 className="text-4xl font-bold text-center mb-4">
+                  What Would Fix the World?
+                </h2>
+              </div>
+              <div className="relative  items-center">
+                <Input
+                  placeholder="Type your answer here..."
+                  className="flex-grow text-xl pr-16 w-4/5"
+                  maxLength={100}
+                />
+                <Button className="absolute right-0 top-0 text-xl font-bold h-full">
+                  <PaperPlaneIcon/>
+                  Submit Answer
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </main>
     </div>
   );
 }
 
+{/* <div className="relative">
+                    <Input placeholder="Type your answer here..." className="pr-16" />
+                    <Button className="absolute right-0 top-0 h-full">Submit Answer</Button>
+                  </div> */}
