@@ -22,10 +22,14 @@ export default function GamePage({ firstName, lastName }: GamePageProps) {
     >
       <h1 
         className="text-4xl flex-row justify-center
-          items-center text-white text-center"
+          items-center text-white text-center border-b-2 border-gray-700 py-3"
       > 
-        Welcome to the Game Page
+        Welcome to the Game
       </h1>
+      <h2 className="text-2xl flex-row justify-center
+          items-center text-balck text-center py-4">
+        {firstName} {lastName}
+      </h2>
 
       {/* Input Box with Icons manual */}
       <div className="fixed bottom-0 left-0 w-full px-4 pb-4">
@@ -35,7 +39,7 @@ export default function GamePage({ firstName, lastName }: GamePageProps) {
           </div>
           <input 
             type="text" 
-            placeholder="Type your message..." 
+            placeholder="Type your message..."
             className="block w-full pl-10 pr-12 py-2 text-gray-900 placeholder-gray-500 rounded-lg border border-gray-300 focus:ring focus:ring-blue-500 focus:border-blue-500"
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3">

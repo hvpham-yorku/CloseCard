@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../ui/button';
 import { currentUser } from '@clerk/nextjs/server';
 import { ClerkLoaded, SignInButton, UserButton } from '@clerk/nextjs';
+import Link from 'next/link';
 
 // Make the Header component async
 export const Header = async () => {
@@ -9,7 +10,7 @@ export const Header = async () => {
     return (
         <header className='px-6 py-4 flex items-center justify-between bg-gray-800 border-b border-gray-700'>
             <h1 className='text-2xl md:text-4xl font-bold tracking-wide text-white'>
-                CloseCard
+            <Link href="/">CloseCard</Link>
             </h1>
             <ClerkLoaded>
                 {user ? (
