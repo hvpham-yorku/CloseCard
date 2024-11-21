@@ -1,1 +1,0 @@
-// component to display all Players in the game
