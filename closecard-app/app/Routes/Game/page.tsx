@@ -3,6 +3,7 @@ import { currentUser  } from "@clerk/nextjs/server";
 import { Header } from "@/components/Global/Header";
 import { SignIn } from "@/components/LandingPage/SignIn";
 import GamePage from "@/components/Game/GamePage";
+import UserList from "@/components/Game/userList";
 
 export default async function Home() {
   const user = await currentUser ();
@@ -12,7 +13,10 @@ export default async function Home() {
       <Header />
       <main className="flex justify-center px-4 p-4">
         {user ? (
-          <GamePage firstName={user.firstName} lastName={user.lastName} />
+          <div className="flex">
+            <GamePage firstName={user.firstName} lastName={user.lastName} />
+            <UserList firstName={user.firstName} lastName={user.lastName} />
+          </div>
         ) : (
           <SignIn />
         )}
