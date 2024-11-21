@@ -5,14 +5,25 @@ import { SignInButton } from '@clerk/nextjs';
 
 export const SignIn = () => {
   return (
-    <div className='flex flex-col items-center justify-center h-screen'>
-			<h1 className='mb-4'>
+    <div className=" bg-slate-900 bg-blend-color rounded-3xl justify-center h-4/5">
+      <div className='flex flex-col items-center text-center justify-center h-screen p-4'> 
+        <div>
+          <h1 className="text-7xl font-bold mb-4 justify-center text-blue-600">
+            Welcome to Our App 
+          </h1>
+        </div>
+        <h1 className="text-7xl font-bold mb-4 justify-center text-slate-600">
         Please sign in to access the CloseCard app 
-      </h1>
+        </h1>
         <SignInButton mode='modal'>
-					{/* {increase button size} */}
-            <Button className='px-10 rounded-sm'>Sign In</Button>
-        </SignInButton>    
+            <Button 
+              variant="ghost" 
+              className='px-16 py-9 mt-8 text-5xl text-center rounded-2xl text-slate-300 bg-blue-900'
+            >
+              Sign In
+            </Button>
+        </SignInButton>   
+      </div> 
     </div>
   )
 }

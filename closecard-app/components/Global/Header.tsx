@@ -8,8 +8,8 @@ export const Header = async () => {
     const user =  await currentUser();
     //console.log(user);
     return (
-    <div className='px-10 py-3 flex items-center justify-between border-b border-b-gray-300'>
-        <h2 className='uppercase font-semibold text-lg tracking-wide'>
+    <div className='px-10 py-3 flex items-center justify-between bg-gray-800 border-white'>
+        <h2 className='uppercase font-semibold text-4xl tracking-wide text-white'>
             CloseCard
         </h2>
         <ClerkLoaded>
@@ -20,7 +20,7 @@ export const Header = async () => {
             ) : (
                 
                 <SignInButton mode='modal'>
-                    <Button className='px-10'>Sign In</Button>
+                    <Button className='px-10 bg-blue-900 rounded-2xl text-gray-400'>Sign In</Button>
                 </SignInButton>
             )}
         </ClerkLoaded>
