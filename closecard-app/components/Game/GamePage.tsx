@@ -26,7 +26,7 @@ export default function GamePage() {
               <div className="relative  items-center">
                 <Input
                   placeholder="Type your answer here..."
-                  className="flex-grow text-xl pr-16 w-4/5"
+                  className="flex-grow text-xl pr-16 w-4/5 md:text-lg"
                   maxLength={100}
                 />
                 <Button className="absolute right-0 top-0 text-xl font-bold h-full">
