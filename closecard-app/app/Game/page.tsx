@@ -1,5 +1,5 @@
 import { currentUser  } from "@clerk/nextjs/server";
-import Footer from "@/components/Global/Footer";
+// import Footer from "@/components/Global/Footer";
 import { Header } from "@/components/Global/Header";
 import { SignIn } from "@/components/LandingPage/SignIn";
 import GamePage from "@/components/Game/GamePage";
@@ -17,7 +17,6 @@ export default async function Home() {
           <SignIn />
         )}
       </main>
-      <Footer />
     </div>
   );
 }

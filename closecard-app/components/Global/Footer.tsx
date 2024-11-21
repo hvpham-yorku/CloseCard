@@ -1,15 +1,11 @@
-// src/components/global/Footer.js
-"use client";
-
 import React from "react";
-import { EnvelopeOpenIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
-
+import { EnvelopeOpenIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-transparent text-white p-4 w-full fixed bottom-0">
+    <footer className="bg-neutral-600 bg-opacity-30 rounded-t-xl text-white p-4 w-full fixed bottom-0">
       <div className="container px-9 mx-auto flex justify-between items-center">
-        <div className="text-md">
+        <div className="text-lg text-gray-400 flex-grow text-left">
           <span>@closecard</span>
         </div>
         <div className="flex space-x-8 text-xs">
@@ -30,9 +26,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      {/* {<div className="border-t border-neutral-600 pt-4 mt-4 text-center">
-        <p>© Close Card</p>
-      </div>} */}
     </footer>
   );
 }
