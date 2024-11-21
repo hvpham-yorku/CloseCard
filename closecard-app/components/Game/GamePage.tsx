@@ -1,8 +1,10 @@
 'use client'
 
 import React from 'react';
-import { AvatarIcon, PaperPlaneIcon } from '@radix-ui/react-icons'; // Ensure you have installed radix-ui icons
-import { Button } from '../ui/button';
+import { AvatarIcon, PaperPlaneIcon } from '@radix-ui/react-icons';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface GamePageProps {
   firstName: string | null;
@@ -16,39 +18,28 @@ export default function GamePage({ firstName, lastName }: GamePageProps) {
   };
 
   return (
-    <div 
-      className="w-3/4 h-screen absolute left-0 bg-slate-500 
-      py-4 rounded-xl border-r-4 border-gray-700 pr-4 overflow-y-auto"
-    >
-      <h1 
-        className="text-4xl flex-row justify-center
-          items-center text-white text-center border-b-2 border-gray-700 py-3"
-      > 
-        Welcome to the Game
-      </h1>
-      <h2 className="text-2xl flex-row justify-center
-          items-center text-balck text-center py-4">
-        {firstName} {lastName}
-      </h2>
-
-      {/* Input Box with Icons manual */}
-      <div className="fixed bottom-0 left-0 w-full px-4 pb-4">
-        <div className="relative w-full max-w-md mx-auto">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-            <AvatarIcon className="w-5 h-5 text-gray-400" />
+    <div className="w-full h-screen bg-gray-900 text-gray-100 overflow-hidden flex flex-col">
+      <div className="flex-1 flex overflow-hidden">
+        {/* Game area */}
+        <main className="flex-1 overflow-auto p-4">
+          <div className="max-w-2xl mx-auto">
+            <Card className="w-full">
+              <CardHeader>
+                <CardTitle>Prompt</CardTitle>
+                <CardDescription>Answer the question below</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <h2 className="text-2xl font-bold text-center mb-4">Favourite Way To Spend The Weekend</h2>
+                <div className="space-y-4">
+                  <Input placeholder="Type your favourite weekend activity here..." />
+                  <Button className="w-full">Submit Answer</Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-          <input 
-            type="text" 
-            placeholder="Type your message..."
-            className="block w-full pl-10 pr-12 py-2 text-gray-900 placeholder-gray-500 rounded-lg border border-gray-300 focus:ring focus:ring-blue-500 focus:border-blue-500"
-          />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-            <Button onClick={handleButtonClick} className="bg-blue-500 text-white rounded-full p-2">
-              <PaperPlaneIcon className="w-5 h-5" />
-            </Button>
-          </div>
-        </div>
+        </main>
       </div>
     </div>
   );
 }
+

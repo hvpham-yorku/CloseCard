@@ -1,20 +1,28 @@
 import React from 'react';
 
-interface UserListProps {
-    firstName: string | null;
-    lastName: string | null;
+interface User {
+  id: number;
+  name: string;
 }
 
-export default function UserList({ firstName, lastName }: UserListProps) {
-    return (
-        <div 
-            className='w-1/4 h-screen py-4 absolute right-0 bg-blue-200 
-            rounded-xl border-l-4 border-gray-700 pl-4 overflow-y-auto'
-        >
-            <h1 className="text-4xl flex-row text-center justify-center items-center text-black" style={{ fontSize: '2rem' }}>Users</h1>
-            <div className='items-center bg-gray-400 rounded-xl flex-auto font-semibold border-gray-700'>
-                <p className="text-2xl text-center" style={{ fontSize: '1.5rem' }}>{firstName} {lastName}</p>
-            </div>
-        </div>
-    );
+export default function UserList() {
+  // Placeholder users
+  const users: User[] = Array.from({ length: 10 }, (_, i) => ({
+    id: i + 1,
+    name: `User ${i + 1}`
+  }));
+
+  return (
+    <div className='w-full md:w-1/4 h-screen py-4 bg-gray-800 rounded-xl border-l border-gray-700 pl-4 overflow-y-auto'>
+      <h2 className="text-2xl font-bold mb-4 text-center text-gray-100">Users</h2>
+      <ul className='space-y-2'>
+        {users.map(user => (
+          <li key={user.id} className='bg-gray-700 rounded-lg p-3 text-gray-100 hover:bg-gray-600 transition-colors'>
+            {user.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
+

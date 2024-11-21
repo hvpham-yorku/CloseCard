@@ -3,6 +3,7 @@ import { Button } from '../ui/button';
 import { currentUser } from '@clerk/nextjs/server';
 import { ClerkLoaded, SignInButton, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
+import { ModeToggle } from './mode-toggle';
 
 // Make the Header component async
 export const Header = async () => {
@@ -10,20 +11,21 @@ export const Header = async () => {
     return (
         <header className='px-6 py-4 flex items-center justify-between bg-gray-800 border-b border-gray-700'>
             <h1 className='text-2xl md:text-4xl font-bold tracking-wide text-white'>
-            <Link href="/">CloseCard</Link>
+                <Link href="/">CloseCard</Link>
             </h1>
             <ClerkLoaded>
-                {user ? (
-                    <div>
+                <div className='flex items-center space-x-4'>
+                    <ModeToggle />
+                    {user ? (
                         <UserButton />
-                    </div>
-                ) : (
-                    <SignInButton mode='modal'>
-                        <Button className='px-4 md:px-10 bg-blue-900 rounded-2xl text-gray-400'>
-                            Sign In
-                        </Button>
-                    </SignInButton>
-                )}
+                    ) : (
+                        <SignInButton mode='modal'>
+                            <Button className='px-4 md:px-10 bg-blue-900 rounded-2xl text-gray-400'>
+                                Sign In
+                            </Button>
+                        </SignInButton>
+                    )}
+                </div>
             </ClerkLoaded>
         </header>
     );
