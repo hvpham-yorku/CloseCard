@@ -18,7 +18,13 @@ const roomMsgSchema = mongoose.Schema(
                 type : String, 
                 required: [true, "Please enter a msg"]
              }
-    }
+    },
+    {
+      timestamps : true
+ 
+ }
+  
+  )
     
-    )
     const RoomMsg = mongoose.model('RoomMsg', roomMsgSchema); 
+    module.exports = RoomMsg;

@@ -1,4 +1,5 @@
 const mongoose = require(`mongoose`); 
+
 const roomUserSchema = mongoose.Schema(
     {
             room_id : { 
@@ -14,7 +15,12 @@ const roomUserSchema = mongoose.Schema(
                 required: [true, "Please enter an email"]
 
              }
-    }
+    },
+      {
+        timestamps : true
+   
+   }
     
     )
     const RoomUser = mongoose.model('RoomUser', roomUserSchema); 
+    module.exports = RoomUser; 

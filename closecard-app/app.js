@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require(`mongoose`);
 const app = express(); 
 const port = 3000; 
+const RoomUser = require('./models/roomUserModel')
+
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false})); 
 mongoose.connect('mongodb+srv://webserver-user:8Ope4255lLUj1SpS@cluster0.xhn3l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
@@ -13,8 +15,17 @@ mongoose.connect('mongodb+srv://webserver-user:8Ope4255lLUj1SpS@cluster0.xhn3l.m
 }).catch((error) =>{
 console.log(error)
 });
-app.post('/joinroom', (req,res) =>{ 
+app.post('/joinroom', async(req,res) =>{ 
    // DATABASE STUFF 
+
+   try{ 
+    const roomuser  = await RoomUser.create(req.body)
+    res.status(200).json(RoomUser);
+
+   } catch (error){ 
+    console.log(error); 
+    res.status(500).json({message: error.message}); 
+   }
     
 }); 
 app.post('/createroom', (req,res) =>{ 
