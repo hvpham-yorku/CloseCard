@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require(`mongoose`);
 const app = express(); 
 const port = 3000; 
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: false})); 
 mongoose.connect('mongodb+srv://webserver-user:8Ope4255lLUj1SpS@cluster0.xhn3l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=>{ 
    console.log("Connected!")
