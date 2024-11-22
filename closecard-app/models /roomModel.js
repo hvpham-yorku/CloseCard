@@ -6,11 +6,11 @@ const roomSchema = mongoose.Schema(
                 type: int, 
                 required: [true, "Please enter a room id"]
             },   
-             name : { 
+             creator_name : { 
                 type: String, 
                 required: [true, "Please enter a name"]
              },
-             email : { 
+             creator_email : { 
                 type : String, 
                 required: [true, "Please enter an email"]
 
