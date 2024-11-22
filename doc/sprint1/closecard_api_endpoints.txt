@@ -1,0 +1,27 @@
+This file includes the main routes for the closecard app 
+
+GET 
+	/rooms (This will return a list of room ids) 
+		Request Format : Unspecified
+	/room/users (This will return a list of all users in the room) 
+		Request Format : Request Body JSON with Room Id, and user name, email 
+POST 
+	/createroom (This will create a room in the database) 
+		Request Format : Request Body JSON with Room Id, and user name and email
+	/joinroom  (This will add a user to a room) 
+		Request Format : Request Body JSON with Room Id, and user name and email
+	/sendmessage (This will send a group message) 
+		Request Format : Request Body JSON with Room Id, and user name and email
+	/sendresponse (This will send prompt response) 
+		Request Format : Request Body JSON with Room Id, and user name and email
+
+DELETE 
+	/deleteroom (This will delete a room) 
+		Request Format : Request Body JSON with Room Id, user name and email (OF ROOM OWNER) 
+
+PUT 
+	/removeuser (This will remove a user from a room) 
+		Request Format : Request Body JSON with Room Id, user name and email of user to be removed and the use user name and email of the user who created the room 
+	/updateroomid (This will update the Room Id) 
+		Request Format : Request Body JSON with Room Id, user name and email of the room owner 
+
