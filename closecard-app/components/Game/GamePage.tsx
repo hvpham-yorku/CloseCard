@@ -1,32 +1,48 @@
-'use client'
+'use client';
 
 import React from 'react';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
-interface GamePageProps {
-  firstName: string | null;
-  lastName: string | null;
-}
-
-export default function GamePage({ firstName, lastName }: GamePageProps) {
-  const handleButtonClick = () => {
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
-    alert(`Generated Number: ${randomNumber}`);
-  };
-
+export default function GamePage() {
   return (
-    <div className="bg-gray-400 bg-blend-color rounded-3xl justify-center h-4/5">
-      <div className='flex flex-col items-center justify-center h-screen p-4'>  
-        <h1 className="text-7xl font-bold mb-4 justify-center">Welcome</h1>
-        <div className="bg-white rounded-lg p-4 mb-4 shadow-md">
-          <p className="text-xl font-semibold">{`${firstName} ${lastName}`}</p>
+    <div className="flex flex-col w-3/4 h-[calc(100vh-110px)] absolute left-1">
+      {/* Main game area */}
+      <main className="flex-grow">
+        <div className="w-full h-full pr-4 pl-2">
+          <Card className="h-full flex flex-col">
+            <CardHeader>
+              <CardTitle className='text-2xl'>Prompt</CardTitle>
+              <CardDescription className='justify-center'>Play Your Turn Answer</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow flex flex-col justify-between">
+              <div>
+                <h2 className="text-4xl font-bold text-center mb-4">
+                  What Would Fix the World?
+                </h2>
+              </div>
+              <div className="relative  items-center">
+                <Input
+                  placeholder="Type your answer here..."
+                  className="flex-grow text-xl pr-16 w-4/5 md:text-lg"
+                  maxLength={100}
+                />
+                <Button className="absolute right-0 top-0 text-xl font-bold h-full">
+                  <PaperPlaneIcon/>
+                  Submit Answer
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-        <div className="mb-4">
-          <Button onClick={handleButtonClick} className='rounded-full bg-green-800 px-10 py-7 text-3xl text-white'>
-            Generate Number
-          </Button>
-        </div>
-      </div>
+      </main>
     </div>
   );
 }
+
+{/* <div className="relative">
+                    <Input placeholder="Type your answer here..." className="pr-16" />
+                    <Button className="absolute right-0 top-0 h-full">Submit Answer</Button>
+                  </div> */}
