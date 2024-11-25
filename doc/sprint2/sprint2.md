@@ -1,0 +1,4 @@
+- The game page will show a prompt
+- Users must submit anonymous answers
+- Once submitted, all answers will be shown to everyone. Each user must try and match the response to the player who submitted it. Each correct guess gives the user a point
+- Points are invisible to the users until a fixed number of rounds have finished, after which the winner is decided as being the user with the most number of points
