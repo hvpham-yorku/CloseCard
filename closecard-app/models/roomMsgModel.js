@@ -17,6 +17,10 @@ const roomMsgSchema = mongoose.Schema(
              msg : { 
                 type : String, 
                 required: [true, "Please enter a msg"]
+             },
+             prompt_id : {
+               type : int, 
+               required : [true,"Please enter a prompt_id"]
              }
     }
     
