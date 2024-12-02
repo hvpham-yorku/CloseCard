@@ -22,7 +22,11 @@ const roomMsgSchema = mongoose.Schema(
                type : int, 
                required : [true,"Please enter a prompt_id"]
              }
-    }
-    
-    )
-    const RoomMsg = mongoose.model('RoomMsg', roomMsgSchema); 
+    },{
+      timestamps : true
+ 
+ }
+  
+  )
+  const RoomMsg = mongoose.model('RoomMsg', roomMsgSchema); 
+  module.exports = RoomMsg; 

@@ -14,7 +14,13 @@ const roomUserSchema = mongoose.Schema(
                 required: [true, "Please enter an email"]
 
              }
-    }
+    },
+    {
+      timestamps : true
+ 
+ }
+  
+  )
+  const RoomUser = mongoose.model('RoomUser', roomUserSchema); 
+  module.exports = RoomUser; 
     
-    )
-    const RoomUser = mongoose.model('RoomUser', roomUserSchema); 
