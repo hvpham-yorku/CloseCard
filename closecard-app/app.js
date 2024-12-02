@@ -51,10 +51,10 @@ app.post('/createroom', async(req,res) =>{
     // Not implementing!
      
  }); 
- app.post('/sendresponse', async(req,res) =>{ 
+ app.post('/sendresponse:', async(req,res) =>{ 
     // DATABASE STUFF 
     try { 
-      const {id} =req.params.id; 
+      // REQUEST BODY MUST HAVE ROOM_ID, USER_NAME, USER_EMAIL, PROMPT_ID
       const user = await RoomMsg.create(req.body);
       res.status.json(user);
    }
@@ -76,7 +76,6 @@ app.post('/createroom', async(req,res) =>{
  app.put('/createuser', async(req,res) => { 
    // REQUEST BODY MUST HAVE USER_NAME, USER_EMAIL
    try { 
-      const {id} =req.params.id; 
       const user = await User.create(req.body);
       res.status.json(user);
    }
