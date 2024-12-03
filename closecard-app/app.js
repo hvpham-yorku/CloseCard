@@ -1,14 +1,16 @@
 const express = require('express'); 
 const mongoose = require(`mongoose`);
+const cors = require('cors');
 const app = express(); 
 const port = 3000; 
 const RoomUser = require('./models/roomUsersModel'); 
 const Room = require('./models/roomModel'); 
-const Users  = require('./models/userModel'); 
+const User  = require('./models/userModel'); 
 const RoomMsg = require('./models/roomMsgModel'); 
 
 
 app.use(express.json()); 
+app.use(cors());
 app.use(express.urlencoded({ extended: false})); 
 mongoose.connect('mongodb+srv://webserver-user:8Ope4255lLUj1SpS@cluster0.xhn3l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=>{ 
@@ -73,17 +75,20 @@ app.post('/createroom', async(req,res) =>{
    // IGNORE FOR NOW
  });
 
- app.put('/createuser', async(req,res) => { 
+ app.post('/createuser', async(req,res) => { 
    // REQUEST BODY MUST HAVE USER_NAME, USER_EMAIL
    try { 
-      const user = await User.create(req.body);
-      res.status.json(user);
+      const user = await User.create({
+         name: req.body.fullName,
+         email: req.body.email,
+      });
+      res.status(200).json(user);
    }
    catch(error){ 
       res.status(500).json({message : error.message});
    }
 
- })
+ });
 
  app.get('/rooms:id/users', async(req,res) =>{ 
     //DATABASE STUFF
@@ -100,7 +105,7 @@ app.post('/createroom', async(req,res) =>{
  app.get('/users', async(req,res) =>{ 
     // DATABASE STUFF
     try {
-      const users = await RoomUser.find({});
+      const users = await User.find({});
       res.status(200).json(users); 
       
     } catch (error) {
