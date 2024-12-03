@@ -3,7 +3,7 @@ const mongoose = require(`mongoose`);
 const roomSchema = mongoose.Schema(
     {
             room_id : { 
-                type: int, 
+                type: Number, 
                 required: [true, "Please enter a room id"]
             },   
              creator_name : { 
@@ -22,6 +22,6 @@ const roomSchema = mongoose.Schema(
  }
   
   )
-  const Room = mongoose.model('Room', roomUserSchema); 
+  const Room = mongoose.model('Room', roomSchema); 
   module.exports = Room; 
    

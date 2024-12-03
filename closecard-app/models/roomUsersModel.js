@@ -2,7 +2,7 @@ const mongoose = require(`mongoose`);
 const roomUserSchema = mongoose.Schema(
     {
             room_id : { 
-                type: int, 
+                type: Number, 
                 required: [true, "Please enter a room id"]
             },   
              user_name : { 

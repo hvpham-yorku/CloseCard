@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require(`mongoose`);
 const app = express(); 
 const port = 3000; 
-const RoomUser = require('./models /roomUsersModel'); 
-const Room = require('./models /roomModel'); 
+const RoomUser = require('./models/roomUsersModel'); 
+const Room = require('./models/roomModel'); 
 const Users  = require('./models/userModel'); 
 const RoomMsg = require('./models/roomMsgModel'); 
 
