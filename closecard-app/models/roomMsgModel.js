@@ -2,7 +2,7 @@ const mongoose = require(`mongoose`);
 const roomMsgSchema = mongoose.Schema(
     {
             room_id : { 
-                type: int, 
+                type: Number, 
                 required: [true, "Please enter a room id"]
             },   
              sender_name : { 
@@ -17,8 +17,16 @@ const roomMsgSchema = mongoose.Schema(
              msg : { 
                 type : String, 
                 required: [true, "Please enter a msg"]
+             },
+             prompt_id : {
+               type : Number, 
+               required : [true,"Please enter a prompt_id"]
              }
-    }
-    
-    )
-    const RoomMsg = mongoose.model('RoomMsg', roomMsgSchema); 
+    },{
+      timestamps : true
+ 
+ }
+  
+  )
+  const RoomMsg = mongoose.model('RoomMsg', roomMsgSchema); 
+  module.exports = RoomMsg; 
