@@ -14,7 +14,6 @@ export default async function Home() {
         {user ? (
           <div className="flex flex-grow">
             <GamePage fullName={user.fullName || ""} email={user.emailAddresses[0].emailAddress} />
-            <UserList />
           </div>
         ) : (
           <SignIn />
