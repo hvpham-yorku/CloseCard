@@ -18,15 +18,29 @@ interface GamePageProps {
   email: string;
 }
 
-export default function GamePage({fullName, email}: GamePageProps) {
+export default function GamePage({ fullName, email }: GamePageProps) {
   const [answer, setAnswer] = useState('');
   const [answersList, setAnswersList] = useState<{ username: string; content: string }[]>([]);
-  const [username, setUsername] = useState('User      Ray '); // You can modify this to get the actual username
+  const [username, setUsername] = useState('User Ray '); // You can modify this to get the actual username
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (answer.trim()) {
-      setAnswersList([...answersList, { username, content: answer }]);
+      const newAnswer = { username, content: answer };
+      setAnswersList([...answersList, newAnswer]);
       setAnswer(''); // Clear the input after submission
+
+      // Send the answer to the backend
+      try {
+        await fetch('http://localhost:3000/answers', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newAnswer),
+        });
+      } catch (error) {
+        console.error('Error submitting answer:', error);
+      }
     }
   };
 
@@ -38,35 +52,40 @@ export default function GamePage({fullName, email}: GamePageProps) {
   };
 
   const handleUnload = async () => {
-    const responseUnload = fetch('http://localhost:3000/removeuser', {
+    await fetch('http://localhost:3000/removeuser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({"email": email})
+      body: JSON.stringify({ email }),
     });
-  }
+  };
 
   const handleLoad = async () => {
     const responseLoad = await fetch('http://localhost:3000/users');
     const resultLoad = await responseLoad.json();
-    
+
     let doesExist = false;
     for (let index = 0; index < resultLoad.length; index++) {
-        if (resultLoad[index]["email"] === email) {
-            doesExist = true;
-        }
+      if (resultLoad[index]["email"] === email) {
+        doesExist = true;
+      }
     }
     if (!doesExist) {
-        const postResponse = await fetch('http://localhost:3000/createuser', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"fullName": fullName, "email": email})
-        });
+      await fetch('http://localhost:3000/createuser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fullName, email }),
+      });
     }
-  }
+
+    // Fetch all stored answers
+    const responseAnswers = await fetch('http://localhost:3000/answers');
+    const resultAnswers = await responseAnswers.json();
+    setAnswersList(resultAnswers);
+  };
 
   useEffect(() => {
     handleLoad();
@@ -130,7 +149,7 @@ export default function GamePage({fullName, email}: GamePageProps) {
                   className="flex-grow text-xl pr-16 w-4/5 md:text-lg"
                   maxLength={100}
                 />
-                <Button 
+                <Button
                   className="absolute right-0 top-0 text-xl font-bold h-full"
                   onClick={handleSubmit}
                 >

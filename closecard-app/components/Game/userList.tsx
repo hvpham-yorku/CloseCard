@@ -13,7 +13,7 @@ export default function UserList() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('http://localhost:3000/users');
-      const result = await response.json()
+      const result = await response.json();
       setData(result);
     }
 
