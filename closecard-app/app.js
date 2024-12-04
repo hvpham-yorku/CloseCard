@@ -100,7 +100,8 @@ app.get('/users', async (req, res) => {
 // New endpoint to store answers
 app.post('/answers', async (req, res) => {
    try {
-      const answer = await RoomMsg.create(req.body);
+      const ans = {username: req.body.name, sender_email: req.body.email, msg: req.body.content};
+      const answer = await RoomMsg.create(ans);
       res.status(200).json(answer);
    } catch (error) {
       res.status(500).json({ message: error.message });

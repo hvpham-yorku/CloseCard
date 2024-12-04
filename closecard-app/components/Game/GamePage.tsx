@@ -20,12 +20,12 @@ interface GamePageProps {
 
 export default function GamePage({ fullName, email }: GamePageProps) {
   const [answer, setAnswer] = useState('');
-  const [answersList, setAnswersList] = useState<{ username: string; content: string }[]>([]);
-  const [username, setUsername] = useState('User Ray '); // You can modify this to get the actual username
+  const [answersList, setAnswersList] = useState<{ email: string; content: string }[]>([]);
+  const [username, setUsername] = useState(fullName); // You can modify this to get the actual username
 
   const handleSubmit = async () => {
     if (answer.trim()) {
-      const newAnswer = { username, content: answer };
+      const newAnswer = { name: fullName, email: email, content: answer };
       setAnswersList([...answersList, newAnswer]);
       setAnswer(''); // Clear the input after submission
 
@@ -124,7 +124,7 @@ export default function GamePage({ fullName, email }: GamePageProps) {
                         <CarouselItem key={index} className="pl-2 md:pl-4 w-1/2 text-center"> {/* Set width to half */}
                           <Card className="bg-slate-800 text-white shadow-lg rounded-lg h-full flex flex-col justify-between"> {/* Updated background color */}
                             <CardHeader className="text-2xl font-bold">
-                              {ans.username}
+                              {fullName}
                             </CardHeader>
                             <CardContent className="flex-grow">
                               <div className="h-24 overflow-y-auto"> {/* Fixed height for scrolling */}
