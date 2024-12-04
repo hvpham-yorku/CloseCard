@@ -4,8 +4,11 @@ import {Header} from "@/components/Global/Header";
 import {SignIn} from "@/components/LandingPage/SignIn";
 
 
-export default async function Home() {
-  const user = await currentUser ();
+export default async function Home() { // check if user was able to be retrieved from the server
+  const user = await currentUser ().catch((error) => {
+    console.error("Error fetching current user:", error);
+    return null;
+  });
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-800">
