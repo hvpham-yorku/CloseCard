@@ -109,7 +109,7 @@ app.post('/answers', async (req, res) => {
 });
 
 // New endpoint to retrieve all answers
-app.get('/answers', async (req, res) => {
+app.get('/getanswers', async (req, res) => {
    try {
       const answers = await RoomMsg.find({});
       res.status(200).json(answers);
