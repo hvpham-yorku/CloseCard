@@ -1,11 +1,11 @@
 
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import RoomUser from './models/RoomUser.js';
-import Room from './models/Room.js';
-import User from './models/User.js';
-import RoomMsg from './models/RoomMsg.js';
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const RoomUser = require('./models/roomUsersModel');
+const Room = require('./models/roomModel');
+const User = require('./models/userModel');
+const RoomMsg = require('./models/roomMsgModel');
 
 
 const app = express(); 
