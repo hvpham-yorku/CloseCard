@@ -13,7 +13,7 @@ export default async function Home() {
       <main className="flex flex-col flex-grow justify-center px-4 p-4">
         {user ? (
           <div className="flex flex-grow">
-            <GamePage />
+            <GamePage fullName={user.fullName || ""} email={user.emailAddresses[0].emailAddress} />
             <UserList />
           </div>
         ) : (
