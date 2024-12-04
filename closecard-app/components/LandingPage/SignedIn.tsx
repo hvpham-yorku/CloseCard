@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '../ui/button';
-import { SignedInClient } from './SignedInClient'
 import { currentUser} from '@clerk/nextjs/server';
 import Link from 'next/link';
 
@@ -10,7 +9,6 @@ const SignedIn = async () => {
 
   return (
     <div className=" bg-gray-400 bg-blend-color rounded-3xl justify-center h-4/5">
-      <SignedInClient fullName={user?.fullName || ""} email={user?.emailAddresses[0].emailAddress || ""}/>
       <div className='flex flex-col items-center justify-center h-screen p-4'>  
         <h1 className="text-7xl font-bold mb-4 justify-center"> Welcome </h1>
         <h1 className="text-4xl font-sans mb-4 text-white">{user?.firstName} {user?.lastName}</h1>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,7 +13,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export default function GamePage() {
+interface GamePageProps {
+  fullName: string;
+  email: string;
+}
+
+export default function GamePage({fullName, email}: GamePageProps) {
   const [answer, setAnswer] = useState('');
   const [answersList, setAnswersList] = useState<{ username: string; content: string }[]>([]);
   const [username, setUsername] = useState('User      Ray '); // You can modify this to get the actual username
@@ -31,6 +36,49 @@ export default function GamePage() {
       handleSubmit(); // Call the submit function
     }
   };
+
+  const handleUnload = async () => {
+    const responseUnload = fetch('http://localhost:3000/removeuser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({"email": email})
+    });
+  }
+
+  const handleLoad = async () => {
+    const responseLoad = await fetch('http://localhost:3000/users');
+    const resultLoad = await responseLoad.json();
+    
+    let doesExist = false;
+    for (let index = 0; index < resultLoad.length; index++) {
+        if (resultLoad[index]["email"] === email) {
+            doesExist = true;
+        }
+    }
+    if (!doesExist) {
+        const postResponse = await fetch('http://localhost:3000/createuser', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({"fullName": fullName, "email": email})
+        });
+    }
+  }
+
+  useEffect(() => {
+    handleLoad();
+
+    const unloadHandler = () => handleUnload();
+
+    window.addEventListener('beforeunload', unloadHandler);
+    return () => {
+      window.removeEventListener('beforeunload', unloadHandler);
+      unloadHandler();
+    };
+  }, []);
 
   return (
     <div className="flex flex-col w-3/4 h-[calc(100vh-110px)] absolute left-1">

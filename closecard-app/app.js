@@ -70,10 +70,15 @@ app.post('/createroom', async(req,res) =>{
     //Not Implementing 
  });
 
- app.delete('/removeuser', (req,res)=>{ 
-    //DATABASE STUFF
-   // IGNORE FOR NOW
- });
+app.post('/removeuser', async (req,res)=>{ 
+   try {
+      await User.findOneAndDelete({email: req.body.email});
+      res.status(200).json(req.body.email);
+   }
+   catch(error) {
+      res.status(500).json({message: error.message});
+   }
+});
 
  app.post('/createuser', async(req,res) => { 
    // REQUEST BODY MUST HAVE USER_NAME, USER_EMAIL
