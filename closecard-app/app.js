@@ -1,12 +1,16 @@
-const express = require('express'); 
-const mongoose = require(`mongoose`);
-const cors = require('cors');
+
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import RoomUser from './models/RoomUser.js';
+import Room from './models/Room.js';
+import User from './models/User.js';
+import RoomMsg from './models/RoomMsg.js';
+
+
 const app = express(); 
 const port = 3000; 
-const RoomUser = require('./models/roomUsersModel'); 
-const Room = require('./models/roomModel'); 
-const User  = require('./models/userModel'); 
-const RoomMsg = require('./models/roomMsgModel'); 
+
 
 
 app.use(express.json()); 
@@ -113,4 +117,3 @@ app.post('/createroom', async(req,res) =>{
     }
  });
   
-
