@@ -83,7 +83,7 @@ export default function GamePage({fullName, email}: GamePageProps) {
   return (
     <div className="flex flex-col w-3/4 h-[calc(100vh-110px)] absolute left-1">
       {/* Main game area */}
-      <main className="flex-grow">
+      <main className="flex-grow ">
         <div className="w-full h-full pr-4 pl-2">
           <Card className="h-full flex flex-col">
             <CardHeader>

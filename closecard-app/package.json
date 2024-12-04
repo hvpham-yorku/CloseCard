@@ -1,6 +1,8 @@
 {
   "name": "closecard-app",
   "version": "0.1.0",
+  "main": "app.js",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,8 +25,8 @@
     "cors": "^2.8.5",
     "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
-    "express": "^4.21.1",
     "embla-carousel-react": "^8.5.1",
+    "express": "^4.21.1",
     "lucide-react": "^0.456.0",
     "mongoose": "^8.8.3",
     "next": "15.0.3",
